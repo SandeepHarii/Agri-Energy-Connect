@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect\\models\\farmer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:models\\farmer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect\\agrienergyconnect.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:agrienergyconnect.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AgriEnergyConnect.csproj",
+              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\AgriEnergyConnect.csproj",
+              "RelativeDocumentMoniker": "AgriEnergyConnect.csproj",
+              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\AgriEnergyConnect.csproj",
+              "RelativeToolTip": "AgriEnergyConnect.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-10T20:20:02.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAkwCoAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T20:17:13.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Farmer.cs",
+              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\Models\\Farmer.cs",
+              "RelativeDocumentMoniker": "Models\\Farmer.cs",
+              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\Models\\Farmer.cs",
+              "RelativeToolTip": "Models\\Farmer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T20:18:14.26Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAywBwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T20:19:03.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-10T20:18:42.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-10T20:16:38.519Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
