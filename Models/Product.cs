@@ -1,23 +1,28 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AgriEnergyConnect.Models;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace AgriEnergyConnect.Models
+public class Product
 {
-    public class Product
-    {
-        public int ProductID { get; set; }
+    public int ProductID { get; set; }
 
-        [Required]
-        public string Name { get; set; }
+    [Required]
+    public string Name { get; set; }
 
-        [Required]
-        public string Category { get; set; }
+    public string Description { get; set; }
+    public decimal Price { get; set; }
+    public string ImageUrl { get; set; }
 
-        [Required]
-        [DataType(DataType.Date)]
-        public DateTime ProductionDate { get; set; }
+    [Required]
+    public string Category { get; set; }
 
-        public int FarmerID { get; set; }
-        public Farmer Farmer { get; set; }
-    }
+    [Required]
+    [DataType(DataType.Date)]
+    public DateTime ProductionDate { get; set; }
 
+    [Required]
+    public string UserID { get; set; }
+
+    [ForeignKey("UserID")] // add this to clarify the relationship
+    public ApplicationUser Farmer { get; set; }
 }

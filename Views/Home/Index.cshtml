@@ -2,7 +2,41 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mx-auto">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to AgriEnergy Connect</h1>
+            <p>Empowering you to get paid for your efforts.</p>
+           
+        </div>
+    </section>
+
+    <!-- Feature Cards -->
+    <div class="card-container">
+        <div class="card">
+            <div class="card-icon">
+                <i class="bx bx-log-in"></i> <!-- Relevant icon for Login -->
+            </div>
+            <div class="card-content">
+                <h2>Login</h2>
+                <p>Access your profile to manage your payments.</p>
+                <a href="/Identity/Account/Login" class="btn-action">
+                    <i class="bx bx-log-in"></i> Login
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon">
+                <i class="bx bx-user-plus"></i> <!-- Relevant icon for Register -->
+            </div>
+            <div class="card-content">
+                <h2>Register</h2>
+                <p>Create a new profile and get started.</p>
+                <a href="/Identity/Account/Register" class="btn-action">
+                    <i class="bx bx-user-plus"></i> Register
+                </a>
+            </div>
+        </div>
+    </div>
 </div>

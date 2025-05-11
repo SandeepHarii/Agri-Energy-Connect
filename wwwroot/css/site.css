@@ -1,22 +1,349 @@
-html {
-  font-size: 14px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background: #F5F5F5; /* Light Gray Background */
+    color: #343a40; /* Dark Grey Text */
+    animation: fadeIn 0.5s ease-in-out; /* Fade-in animation for body */
+}
+
+.details-section hr {
+    color: #343a40; /* Dark Grey */
+}
+
+/* Centered Wrapper with Tan Border */
+.wrapper {
+    max-width: 700px;
+    width: 80%;
+    background: #FFFFFF; /* White Background */
+    border: 2px solid #D2B48C; /* Tan Border */
+    padding: 50px 60px;
+    border-radius: 10px;
+    margin: 30px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #343a40; /* Dark Grey Text */
+    transition: transform 0.3s ease;
+}
+
+    .wrapper:hover {
+        transform: scale(1.02); /* Slightly increase size on hover */
+    }
+
+/* PM Claim Review Page Wrapper */
+.pm-claim-review-wrapper {
+    max-width: 1000px;
+    width: 90%;
+    padding: 60px 70px;
+    margin: 60px auto;
+    background: #FFFFFF; /* White Background */
+    border: 2px solid #D2B48C; /* Tan Border */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+    .pm-claim-review-wrapper:hover {
+        transform: scale(1.02);
+    }
+
+/* Input Field Styles */
+.input-with-icon {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+    .input-with-icon input {
+        width: 100%;
+        padding-right: 2.5rem;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        padding: 12px 15px;
+        font-size: 14px;
+        color: #343a40; /* Dark Grey Text */
+        background: #FFFFFF; /* White Background */
+        transition: border-color 0.3s ease;
+    }
+
+        .input-with-icon input:focus {
+            border-color: #1E90FF; /* Dodger Blue on focus */
+        }
+
+    /* Icon Positioning */
+    .input-with-icon .bx {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #6c757d; /* Light Grey Icon */
+    }
+
+/* Remember Me and Forgot Password Section */
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+    .remember-forgot a {
+        color: #1E90FF; /* Dodger Blue Links */
+        text-decoration: none;
+    }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+/* Primary Button */
+.wrapper .btn.btn-primary.rounded {
+    width: 100%;
+    height: 45px;
+    background: #3CB371; /* Medium Sea Green */
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #FFFFFF; /* White Text */
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+    .wrapper .btn.btn-primary.rounded:hover {
+        background: #2E8B57; /* Sea Green on Hover */
+        transform: scale(1.05);
+    }
+
+/* Button Styling for Various Actions (Submit, Track, Review) */
+.btn-action {
+    background-color: #FFA500; /* Orange */
+    color: #FFFFFF; /* White Text */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s;
+    margin-right: 5px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+    .btn-action:hover {
+        background-color: #1E90FF; /* Dodger Blue on Hover */
+        color: #FFFFFF; /* White Text */
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(30, 144, 255, 0.2); /* Subtle Blue shadow */
+    }
+
+/* Register Link */
+.register-link p a {
+    color: #3CB371; /* Medium Sea Green */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+    .register-link p a:hover {
+        text-decoration: underline;
+    }
+
+/* Focus Styles */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem #FFFFFF, 0 0 0 0.25rem #1E90FF;
+}
+
+/* Hero Section with Sea Green Accents */
+.hero {
+    background-color: #2E8B57; /* Sea Green Background */
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #FFFFFF; /* White Text */
+}
+
+    .hero h1,
+    .hero p {
+        color: #FFFFFF;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .hero a.btn-primary {
+        background-color: #1E90FF; /* Dodger Blue */
+        border-color: #1E90FF;
+    }
+
+        .hero a.btn-primary:hover {
+            background-color: #2E8B57; /* Sea Green Hover */
+            border-color: #2E8B57;
+        }
+
+/* Feature Cards */
+.features {
+    padding: 40px 0;
+    background-color: #F5DEB3; /* Wheat Background */
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #FFFFFF; /* White Background */
+    border: 2px solid #D2B48C; /* Tan Border */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 25px;
+    text-align: center;
+    color: #343a40;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+    .card:hover {
+        transform: scale(1.05);
+    }
+
+.card-icon {
+    margin-bottom: 20px;
+    color: #2E8B57; /* Sea Green Icon */
+    font-size: 2.5rem;
+}
+
+.card-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #2E8B57; /* Sea Green Header */
+}
+
+.card-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+.card-content a.btn-outline-primary {
+    color: #2E8B57; /* Sea Green */
+    border-color: #2E8B57;
+    border-radius: 40px;
+    padding: 12px 20px;
+    font-size: 14px;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+    .card-content a.btn-outline-primary:hover {
+        color: #1E90FF; /* Dodger Blue */
+        border-color: #1E90FF;
+        background-color: #F5F5F5; /* Light Gray Background */
+    }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* Table Container */
+.table-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 20px;
+    background: #FFFFFF;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+    .table-container table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .table-container th,
+    .table-container td {
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    .table-container th {
+        background: #2E8B57; /* Sea Green */
+        color: #FFFFFF; /* White Text */
+    }
+
+/* Claim Table */
+.claim-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.claim-table th,
+.claim-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Track Table Styles */
+.track-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .track-table th,
+    .track-table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+/* Footer Styles */
+footer {
+    background-color: #4682B4; /* Steel Blue */
+    color: #FFFFFF; /* White Text */
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+    footer a {
+        color: #FFFFFF; /* White Links */
+        text-decoration: none;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

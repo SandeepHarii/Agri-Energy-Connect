@@ -30,6 +30,15 @@ namespace AgriEnergyConnect.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
+                    UserType = table.Column<int>(type: "INTEGER", nullable: false),
+                    FirstName = table.Column<string>(type: "TEXT", nullable: false),
+                    LastName = table.Column<string>(type: "TEXT", nullable: false),
+                    HasMarketplaceAccess = table.Column<bool>(type: "INTEGER", nullable: false),
+                    HasForumAccess = table.Column<bool>(type: "INTEGER", nullable: false),
+                    HasProductListingAccess = table.Column<bool>(type: "INTEGER", nullable: false),
+                    HasAdminAccess = table.Column<bool>(type: "INTEGER", nullable: false),
+                    FarmerId = table.Column<int>(type: "INTEGER", nullable: true),
+                    GreenTechProviderId = table.Column<int>(type: "INTEGER", nullable: true),
                     UserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
@@ -185,19 +194,28 @@ namespace AgriEnergyConnect.Migrations
                     ProductID = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
+                    Description = table.Column<string>(type: "TEXT", nullable: false),
+                    Price = table.Column<decimal>(type: "TEXT", nullable: false),
+                    ImageUrl = table.Column<string>(type: "TEXT", nullable: false),
                     Category = table.Column<string>(type: "TEXT", nullable: false),
                     ProductionDate = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    FarmerID = table.Column<int>(type: "INTEGER", nullable: false)
+                    UserID = table.Column<string>(type: "TEXT", nullable: false),
+                    FarmerID = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.ProductID);
                     table.ForeignKey(
+                        name: "FK_Products_AspNetUsers_UserID",
+                        column: x => x.UserID,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_Products_Farmers_FarmerID",
                         column: x => x.FarmerID,
                         principalTable: "Farmers",
-                        principalColumn: "FarmerID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "FarmerID");
                 });
 
             migrationBuilder.CreateIndex(
@@ -246,6 +264,11 @@ namespace AgriEnergyConnect.Migrations
                 name: "IX_Products_FarmerID",
                 table: "Products",
                 column: "FarmerID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_UserID",
+                table: "Products",
+                column: "UserID");
         }
 
         /// <inheritdoc />

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\AgriEnergyConnect.csproj": {}
+    "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\AgriEnergyConnect.csproj": {}
   },
   "projects": {
-    "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\AgriEnergyConnect.csproj": {
+    "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\AgriEnergyConnect.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\AgriEnergyConnect.csproj",
+        "projectUniqueName": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\AgriEnergyConnect.csproj",
         "projectName": "AgriEnergyConnect",
-        "projectPath": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\AgriEnergyConnect.csproj",
+        "projectPath": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\AgriEnergyConnect.csproj",
         "packagesPath": "C:\\Users\\Sande\\.nuget\\packages\\",
-        "outputPath": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect\\obj\\",
+        "outputPath": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

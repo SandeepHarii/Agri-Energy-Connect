@@ -1,18 +1,25 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using AgriEnergyConnect.Models;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AgriEnergyConnect.Models
+public class Farmer
 {
-    public class Farmer
-    {
-        public int FarmerID { get; set; }
-        public string Name { get; set; }
-        public string Contact { get; set; }
-        public string Location { get; set; }
+    public int FarmerID { get; set; }
 
-        public string UserId { get; set; }
-        public IdentityUser User { get; set; }
+    [Required]
+    public string Name { get; set; }
 
-        public List<Product> Products { get; set; }
-    }
+    [Required]
+    public string Contact { get; set; }
 
+    [Required]
+    public string Location { get; set; }
+
+    [Required]
+    public string UserId { get; set; }
+
+    [ForeignKey("UserId")] //explicitly define foreign key
+    public ApplicationUser User { get; set; }
+
+    public List<Product> Products { get; set; }
 }

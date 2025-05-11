@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using AgriEnergyConnect.Data;
 using AgriEnergyConnect.Models;
+using AgriEnergyConnect.Services;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,10 +11,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configure Identity
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+// Configure Identity with custom ApplicationUser
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
+
+//Register the dummy email sender
+builder.Services.AddSingleton<IEmailSender, DummyEmailSender>();
 
 // Add MVC services
 builder.Services.AddControllersWithViews();
@@ -32,10 +37,11 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
-    var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
+    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
     var dbContext = services.GetRequiredService<ApplicationDbContext>();
 
     string[] roles = { "Farmer", "Employee" };
+
     foreach (var role in roles)
     {
         if (!await roleManager.RoleExistsAsync(role))
@@ -49,18 +55,22 @@ using (var scope = app.Services.CreateScope())
     var farmerUser = await userManager.FindByEmailAsync(farmerEmail);
     if (farmerUser == null)
     {
-        farmerUser = new IdentityUser
+        farmerUser = new ApplicationUser
         {
             UserName = farmerEmail,
             Email = farmerEmail,
-            EmailConfirmed = true
+            EmailConfirmed = true,
+            FirstName = "John",
+            LastName = "Doe",
+            PhoneNumber = "1234567890",
+            UserType = UserTypeEnum.Farmer
         };
+
         var result = await userManager.CreateAsync(farmerUser, "Farmer1!");
         if (result.Succeeded)
         {
             await userManager.AddToRoleAsync(farmerUser, "Farmer");
 
-            // Create corresponding Farmer entity
             var farmer = new Farmer
             {
                 Name = "John Doe",
@@ -78,12 +88,17 @@ using (var scope = app.Services.CreateScope())
     var employeeUser = await userManager.FindByEmailAsync(employeeEmail);
     if (employeeUser == null)
     {
-        employeeUser = new IdentityUser
+        employeeUser = new ApplicationUser
         {
             UserName = employeeEmail,
             Email = employeeEmail,
-            EmailConfirmed = true
+            EmailConfirmed = true,
+            FirstName = "Emily",
+            LastName = "Smith",
+            PhoneNumber = "0987654321",
+            UserType = UserTypeEnum.Employee
         };
+
         var result = await userManager.CreateAsync(employeeUser, "Employee123!");
         if (result.Succeeded)
         {
@@ -105,7 +120,9 @@ else
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
 app.UseRouting();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -114,4 +131,5 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapRazorPages();
+
 app.Run();

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Product>
+
+<h2>Your Products</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>@product.Price</td>
+                    <td>
+                        <a href="@Url.Action("EditProduct", new { id = product.ProductID })">Edit</a> |
+                        <a href="@Url.Action("DeleteProduct", new { id = product.ProductID })">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No products found.</p>
+}
