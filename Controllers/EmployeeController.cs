@@ -1,0 +1,104 @@
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using AgriEnergyConnect.Models;
+using AgriEnergyConnect.ViewModels;
+using Microsoft.EntityFrameworkCore;
+using AgriEnergyConnect.Data;
+
+[Authorize(Roles = "Employee")]
+public class EmployeeController : Controller
+{
+    private readonly UserManager<ApplicationUser> _userManager;
+    private readonly RoleManager<IdentityRole> _roleManager;
+    private readonly ApplicationDbContext _context;
+
+    public EmployeeController(
+        ApplicationDbContext context,
+        UserManager<ApplicationUser> userManager,
+        RoleManager<IdentityRole> roleManager)
+    {
+        _context = context;
+        _userManager = userManager;
+        _roleManager = roleManager;
+    }
+
+    public IActionResult Dashboard()
+    {
+
+        return View();
+
+    }
+
+    // GET: Employee/AddFarmer
+    public IActionResult AddFarmer()
+    {
+        return View();
+    }
+
+    // POST: Employee/AddFarmer
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> AddFarmer(AddFarmerViewModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            var user = new ApplicationUser
+            {
+                UserName = model.Email,
+                Email = model.Email,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                PhoneNumber = model.PhoneNumber,
+                UserType = UserTypeEnum.Farmer
+            };
+
+            var result = await _userManager.CreateAsync(user, model.Password);
+
+            if (result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, "Farmer");
+                TempData["SuccessMessage"] = "Farmer profile created successfully.";
+                return RedirectToAction("AddFarmer");
+            }
+
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error.Description);
+            }
+        }
+
+        return View(model);
+    }
+
+    // GET: Employee/ViewProducts
+    public async Task<IActionResult> ViewProducts(string? searchTerm)
+    {
+        var query = _context.Products
+            .Include(p => p.Farmer)
+            .AsQueryable();
+
+        if (!string.IsNullOrEmpty(searchTerm))
+        {
+            string loweredTerm = searchTerm.ToLower();
+
+            query = query.Where(p =>
+                p.Name.ToLower().Contains(loweredTerm) ||
+                p.Description.ToLower().Contains(loweredTerm) ||
+                (p.Farmer.FirstName + " " + p.Farmer.LastName).ToLower().Contains(loweredTerm) ||
+                p.Farmer.FirstName.ToLower().Contains(loweredTerm) ||
+                p.Farmer.LastName.ToLower().Contains(loweredTerm) ||
+                p.Price.ToString().Contains(loweredTerm));
+        }
+
+        var model = new ProductFilterViewModel
+        {
+            SearchTerm = searchTerm,
+            Products = await query.OrderByDescending(p => p.ProductionDate).ToListAsync()
+        };
+
+        return View(model);
+    }
+
+
+}

@@ -36,13 +36,7 @@
                             <a class="nav-link text-dark" asp-controller="Farmer" asp-action="ViewProducts">View Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Employee" asp-action="Dashboard">Employee Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Employee" asp-action="AddFarmer">Add Farmer</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Employee" asp-action="ViewProducts">View Farmer Products</a>
+                            <a class="nav-link text-dark" asp-controller="Emplyoee" asp-action="AddFarmer">Add Farmer</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />

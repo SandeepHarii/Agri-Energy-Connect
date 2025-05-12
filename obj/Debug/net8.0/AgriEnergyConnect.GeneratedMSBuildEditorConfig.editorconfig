@@ -188,6 +188,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Sandeep Data/Final Year/Semester 5/PROG7311 - Programming 3A/PoE/Part 2/AgriEnergyConnect - Current/Views/Employee/AddFarmer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcQWRkRmFybWVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sandeep Data/Final Year/Semester 5/PROG7311 - Programming 3A/PoE/Part 2/AgriEnergyConnect - Current/Views/Employee/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Sandeep Data/Final Year/Semester 5/PROG7311 - Programming 3A/PoE/Part 2/AgriEnergyConnect - Current/Views/Employee/ViewProducts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcVmlld1Byb2R1Y3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Sandeep Data/Final Year/Semester 5/PROG7311 - Programming 3A/PoE/Part 2/AgriEnergyConnect - Current/Views/Farmer/AddProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmFybWVyXEFkZFByb2R1Y3QuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

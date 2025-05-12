@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Employee Dashboard";
+}
+
+<div class="container mx-auto">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Employee Dashboard</h1>
+            <p>
+                Manage farmer registrations and view product listings
+            </p>
+        </div>
+    </section>
+
+    <!-- Feature Cards -->
+    <div class="card-container">
+        <div class="card">
+            <div class="card-icon">
+                <i class="bx bx-user-plus"></i> <!-- Icon for adding farmer -->
+            </div>
+            <div class="card-content">
+                <h2>Add Farmer Profile</h2>
+                <p>Create and register new farmer profiles in the platform.</p>
+                <a href="/Employee/AddFarmer" class="btn-action">
+                    <i class="bx bx-user-plus"></i> Add Farmer
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon">
+                <i class="bx bx-list-ul"></i> <!-- Icon for product list -->
+            </div>
+            <div class="card-content">
+                <h2>View All Products</h2>
+                <p>Browse products listed by all farmers and apply filters as needed.</p>
+                <a href="/Employee/ViewProducts" class="btn-action">
+                    <i class="bx bx-list-ul"></i> View Farmer Products
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -23,6 +23,6 @@ public class Product
     [Required]
     public string UserID { get; set; }
 
-    [ForeignKey("UserID")] // add this to clarify the relationship
+    [ForeignKey("UserID")]
     public ApplicationUser Farmer { get; set; }
 }
