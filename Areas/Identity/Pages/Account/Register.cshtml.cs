@@ -75,19 +75,18 @@ namespace AgriEnergyConnect.Areas.Identity.Pages.Account
                 {
                     UserName = Input.Email,
                     Email = Input.Email,
-                    FirstName = Input.FirstName, // Ensure FirstName is set here
+                    FirstName = Input.FirstName,
                     LastName = Input.LastName,
                     PhoneNumber = Input.PhoneNumber,
                     UserType = Input.UserType
                 };
-
 
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
 
-                    var roleName = Input.UserType.ToString(); // Convert enum to string
+                    var roleName = Input.UserType.ToString(); // Convert enum to string (e.g., "Farmer", "Employee")
 
                     // Ensure role exists
                     if (!await _roleManager.RoleExistsAsync(roleName))
@@ -99,6 +98,15 @@ namespace AgriEnergyConnect.Areas.Identity.Pages.Account
                     await _userManager.AddToRoleAsync(user, roleName);
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
+                    _logger.LogInformation("User signed in after registration.");
+
+                    // Redirect based on role
+                    if (roleName == "Farmer")
+                        return LocalRedirect("/Farmer/Dashboard");
+
+                    if (roleName == "Employee")
+                        return LocalRedirect("/Employee/Dashboard");
+
                     return LocalRedirect(returnUrl);
                 }
 
@@ -110,6 +118,7 @@ namespace AgriEnergyConnect.Areas.Identity.Pages.Account
 
             return Page();
         }
+
     }
 
 }

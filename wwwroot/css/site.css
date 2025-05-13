@@ -1,49 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&family=Lora:wght@400;500;600&display=swap');
+
+/* Define color scheme using :root */
+:root {
+    --primary-color: #2E8B57; /* Sea Green */
+    --secondary-color: #1E90FF; /* Dodger Blue */
+    --accent-color: #3CB371; /* Medium Sea Green */
+    --text-color: #343a40; /* Dark Grey Text */
+    --background-color: #F5F5F5; /* Light Gray Background */
+    --card-border-color: #D2B48C; /* Tan Border */
+    --card-hover-color: #F5F5F5; /* Light Gray on Hover */
+    --button-background: #3CB371; /* Medium Sea Green */
+    --button-hover-background: #2E8B57; /* Sea Green */
+    --footer-background: #4682B4; /* Steel Blue */
+    --footer-link-color: #FFFFFF; /* White Links */
+    --hero-background: #2E8B57; /* Sea Green */
+    --link-hover-color: #1E90FF; /* Dodger Blue Hover */
+    --input-focus-border-color: #1E90FF; /* Dodger Blue on focus */
+    --texture-background: url('https://www.transparenttextures.com/patterns/fabric-of-squares.png'); /* Farmy Texture */
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Lora', serif;
 }
 
 body {
     margin-bottom: 60px;
-    background: #F5F5F5; /* Light Gray Background */
-    color: #343a40; /* Dark Grey Text */
-    animation: fadeIn 0.5s ease-in-out; /* Fade-in animation for body */
+    background: linear-gradient(rgba(245, 245, 245, 0.95), rgba(245, 245, 245, 0.95)), var(--texture-background);
+    background-size: 100% 100%;
+    color: var(--text-color);
+    animation: fadeIn 0.5s ease-in-out;
 }
 
-.details-section hr {
-    color: #343a40; /* Dark Grey */
-}
-
-/* Centered Wrapper with Tan Border */
+/* Wrapper */
 .wrapper {
     max-width: 700px;
     width: 80%;
-    background: #FFFFFF; /* White Background */
-    border: 2px solid #D2B48C; /* Tan Border */
+    background: #FFFFFF;
+    border: 2px solid var(--card-border-color);
     padding: 50px 60px;
     border-radius: 10px;
     margin: 30px auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    color: #343a40; /* Dark Grey Text */
+    color: var(--text-color);
     transition: transform 0.3s ease;
 }
 
     .wrapper:hover {
-        transform: scale(1.02); /* Slightly increase size on hover */
+        transform: scale(1.02);
     }
 
-/* PM Claim Review Page Wrapper */
+/* PM Claim Review Wrapper */
 .pm-claim-review-wrapper {
     max-width: 1000px;
     width: 90%;
     padding: 60px 70px;
     margin: 60px auto;
-    background: #FFFFFF; /* White Background */
-    border: 2px solid #D2B48C; /* Tan Border */
+    background: #FFFFFF;
+    border: 2px solid var(--card-border-color);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
@@ -53,7 +69,7 @@ body {
         transform: scale(1.02);
     }
 
-/* Input Field Styles */
+/* Input Fields */
 .input-with-icon {
     position: relative;
     margin-bottom: 20px;
@@ -66,26 +82,25 @@ body {
         border: 1px solid #ddd;
         padding: 12px 15px;
         font-size: 14px;
-        color: #343a40; /* Dark Grey Text */
-        background: #FFFFFF; /* White Background */
+        color: var(--text-color);
+        background: #FFFFFF;
         transition: border-color 0.3s ease;
     }
 
         .input-with-icon input:focus {
-            border-color: #1E90FF; /* Dodger Blue on focus */
+            border-color: var(--input-focus-border-color);
         }
 
-    /* Icon Positioning */
     .input-with-icon .bx {
         position: absolute;
         right: 10px;
         top: 50%;
         transform: translateY(-50%);
         font-size: 20px;
-        color: #6c757d; /* Light Grey Icon */
+        color: #6c757d;
     }
 
-/* Remember Me and Forgot Password Section */
+/* Remember/Forgot Section */
 .remember-forgot {
     display: flex;
     justify-content: space-between;
@@ -95,7 +110,7 @@ body {
 }
 
     .remember-forgot a {
-        color: #1E90FF; /* Dodger Blue Links */
+        color: var(--secondary-color);
         text-decoration: none;
     }
 
@@ -107,27 +122,27 @@ body {
 .wrapper .btn.btn-primary.rounded {
     width: 100%;
     height: 45px;
-    background: #3CB371; /* Medium Sea Green */
+    background: var(--button-background);
     border: none;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     cursor: pointer;
     font-size: 16px;
-    color: #FFFFFF; /* White Text */
+    color: #FFFFFF;
     font-weight: 600;
     transition: background 0.3s ease, transform 0.3s ease;
     margin-top: 20px;
 }
 
     .wrapper .btn.btn-primary.rounded:hover {
-        background: #2E8B57; /* Sea Green on Hover */
+        background: var(--button-hover-background);
         transform: scale(1.05);
     }
 
-/* Button Styling for Various Actions (Submit, Track, Review) */
+/* Action Button */
 .btn-action {
-    background-color: #FFA500; /* Orange */
-    color: #FFFFFF; /* White Text */
+    background-color: #FFA500;
+    color: #FFFFFF;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -139,15 +154,15 @@ body {
 }
 
     .btn-action:hover {
-        background-color: #1E90FF; /* Dodger Blue on Hover */
-        color: #FFFFFF; /* White Text */
+        background-color: var(--secondary-color);
+        color: #FFFFFF;
         transform: scale(1.05);
-        box-shadow: 0 4px 8px rgba(30, 144, 255, 0.2); /* Subtle Blue shadow */
+        box-shadow: 0 4px 8px rgba(30, 144, 255, 0.2);
     }
 
 /* Register Link */
 .register-link p a {
-    color: #3CB371; /* Medium Sea Green */
+    color: var(--accent-color);
     text-decoration: none;
     font-weight: 600;
 }
@@ -162,19 +177,19 @@ body {
 .btn-link.nav-link:focus,
 .form-control:focus,
 .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem #FFFFFF, 0 0 0 0.25rem #1E90FF;
+    box-shadow: 0 0 0 0.1rem #FFFFFF, 0 0 0 0.25rem var(--input-focus-border-color);
 }
 
-/* Hero Section with Sea Green Accents */
+/* Hero Section */
 .hero {
-    background-color: #2E8B57; /* Sea Green Background */
+    background-color: var(--hero-background);
     text-align: center;
     padding: 40px 0;
     margin-bottom: 30px;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: #FFFFFF; /* White Text */
+    color: #FFFFFF;
 }
 
     .hero h1,
@@ -184,19 +199,19 @@ body {
     }
 
     .hero a.btn-primary {
-        background-color: #1E90FF; /* Dodger Blue */
-        border-color: #1E90FF;
+        background-color: var(--secondary-color);
+        border-color: var(--secondary-color);
     }
 
         .hero a.btn-primary:hover {
-            background-color: #2E8B57; /* Sea Green Hover */
-            border-color: #2E8B57;
+            background-color: var(--button-hover-background);
+            border-color: var(--button-hover-background);
         }
 
-/* Feature Cards */
+/* Features Section */
 .features {
     padding: 40px 0;
-    background-color: #F5DEB3; /* Wheat Background */
+    background-color: #F5DEB3;
 }
 
 .card-container {
@@ -207,14 +222,14 @@ body {
 }
 
 .card {
-    background: #FFFFFF; /* White Background */
-    border: 2px solid #D2B48C; /* Tan Border */
+    background: #FFFFFF;
+    border: 2px solid var(--card-border-color);
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 300px;
     padding: 25px;
     text-align: center;
-    color: #343a40;
+    color: var(--text-color);
     margin-bottom: 20px;
     transition: transform 0.3s ease;
 }
@@ -225,25 +240,25 @@ body {
 
 .card-icon {
     margin-bottom: 20px;
-    color: #2E8B57; /* Sea Green Icon */
+    color: var(--hero-background);
     font-size: 2.5rem;
 }
 
 .card-content h2 {
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: #2E8B57; /* Sea Green Header */
+    color: var(--hero-background);
 }
 
 .card-content p {
     font-size: 1rem;
     margin-bottom: 20px;
-    color: #343a40;
+    color: var(--text-color);
 }
 
 .card-content a.btn-outline-primary {
-    color: #2E8B57; /* Sea Green */
-    border-color: #2E8B57;
+    color: var(--hero-background);
+    border-color: var(--hero-background);
     border-radius: 40px;
     padding: 12px 20px;
     font-size: 14px;
@@ -251,18 +266,18 @@ body {
 }
 
     .card-content a.btn-outline-primary:hover {
-        color: #1E90FF; /* Dodger Blue */
-        border-color: #1E90FF;
-        background-color: #F5F5F5; /* Light Gray Background */
+        color: var(--secondary-color);
+        border-color: var(--secondary-color);
+        background-color: var(--background-color);
     }
 
+/* Containers */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 30px;
 }
 
-/* Table Container */
 .table-container {
     display: flex;
     flex-direction: column;
@@ -288,40 +303,28 @@ body {
     }
 
     .table-container th {
-        background: #2E8B57; /* Sea Green */
-        color: #FFFFFF; /* White Text */
+        background: var(--hero-background);
+        color: #FFFFFF;
     }
 
-/* Claim Table */
-.claim-table table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.claim-table th,
-.claim-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
-}
-
-/* Track Table Styles */
+/* Tables */
+.claim-table table,
 .track-table {
     width: 100%;
     border-collapse: collapse;
 }
 
-    .track-table th,
-    .track-table td {
+    .claim-table th, .claim-table td,
+    .track-table th, .track-table td {
         border: 1px solid #ddd;
         padding: 12px;
         text-align: left;
     }
 
-/* Footer Styles */
+/* Footer */
 footer {
-    background-color: #4682B4; /* Steel Blue */
-    color: #FFFFFF; /* White Text */
+    background-color: var(--footer-background);
+    color: var(--footer-link-color);
     text-align: center;
     padding: 20px;
     font-size: 14px;
@@ -329,7 +332,7 @@ footer {
 }
 
     footer a {
-        color: #FFFFFF; /* White Links */
+        color: var(--footer-link-color);
         text-decoration: none;
     }
 
@@ -337,13 +340,13 @@ footer {
             text-decoration: underline;
         }
 
-/* Fade-in Animation */
+/* Animations */
 @keyframes fadeIn {
-    from {
+    0% {
         opacity: 0;
     }
 
-    to {
+    100% {
         opacity: 1;
     }
 }

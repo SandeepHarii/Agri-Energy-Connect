@@ -1,0 +1,67 @@
+﻿@using AgriEnergyConnect.ViewModels;
+@model ProductFilterViewModel
+
+@{
+    ViewData["Title"] = "All Products";
+}
+
+<div class="row">
+    <div class="wrapper mx-auto">
+        <section>
+            <h2 class="text-center mb-3">All Farmer Products</h2>
+            <hr />
+
+            <!-- Search Form -->
+            <form method="get" class="mb-4">
+                <div class="Wrapper">
+                    <div class="row g-2 align-items-center">
+                        <div class="col-md-9 input-with-icon">
+                            <input type="text" name="searchTerm" value="@Model.SearchTerm" class="form-control" placeholder="Search by Product Name, Farmer, or Price" />
+                            <i class='bx bx-search'></i>
+                        </div>
+                        <div class="col-md-3 d-flex gap-2">
+                            <button class="btn btn-primary flex-fill" type="submit">Search</button>
+                            <a class="btn btn-outline-primary flex-fill" href="@Url.Action("ViewProducts", "Employee")">Clear</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Product Table -->
+            @if (Model.Products.Any())
+            {
+                <div class="table-responsive Wrapper">
+                    <table class="table table-bordered shadow-sm" style="background-color: #FFFFFF; border-left: 4px solid #2E8B57;">
+                        <thead class="text-white" style="background-color: #4682B4;">
+                            <tr>
+                                <th>Product</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Farmer</th>
+                                <th>Date Added</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var product in Model.Products)
+                            {
+                                <tr>
+                                    <td>@product.Name</td>
+                                    <td>@product.Description</td>
+                                    <td>@product.Price.ToString("C")</td>
+                                    <td>@($"{product.Farmer.FirstName} {product.Farmer.LastName}")</td>
+                                    <td>@product.ProductionDate.ToShortDateString()</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <div class="Wrapper text-center text-muted">
+                    <p>No products found.</p>
+                </div>
+            }
+        </section>
+    </div>
+</div>

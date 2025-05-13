@@ -39,17 +39,15 @@
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
 
-            <!-- Role Dropdown with icon -->
-            <div class="input-with-icon mb-3 position-relative">
-                <select class="form-control" asp-for="Input.UserType" id="userTypeSelect">
+            <!-- Role Dropdown -->
+            <div class="input-with-icon mb-3">
+                <select class="form-control" asp-for="Input.UserType">
                     <option value="">Select Role</option>
-                    <option value="Farmer">👨‍🌾 Farmer</option>
-                    <option value="Employee">👩‍💼 Employee</option>
+                    <option value="Farmer">Farmer</option>
+                    <option value="Employee">Employee</option>
                 </select>
-                <i class="bx bx-user position-absolute end-0 top-50 translate-middle-y me-3 pointer-events-none"></i>
                 <span asp-validation-for="Input.UserType" class="text-danger"></span>
             </div>
-
 
             <!-- Password -->
             <div class="input-with-icon mb-3 position-relative">

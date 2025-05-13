@@ -83,28 +83,17 @@ namespace AgriEnergyConnect.Controllers
                 return NotFound();
             }
 
-            var model = new EditProductViewModel
-            {
-                ProductID = product.ProductID,
-                Name = product.Name,
-                Description = product.Description,
-                Price = product.Price,
-                ImageUrl = product.ImageUrl,
-                Category = product.Category,
-                ProductionDate = product.ProductionDate
-            };
-
-            return View(model);
+            return View(product);
         }
 
         // POST: Farmer/EditProduct/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditProduct(int id, EditProductViewModel model)
+        public async Task<IActionResult> EditProduct(int id, Product updatedProduct)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            if (id != model.ProductID)
+            if (id != updatedProduct.ProductID)
                 return NotFound();
 
             var product = await _context.Products.FindAsync(id);
@@ -118,22 +107,28 @@ namespace AgriEnergyConnect.Controllers
                     Console.WriteLine("Validation error: " + error.ErrorMessage);
                 }
 
-                return View(model);
+                return View(updatedProduct);
             }
 
-            // Update only editable fields
-            product.Name = model.Name;
-            product.Description = model.Description;
-            product.Price = model.Price;
-            product.ImageUrl = model.ImageUrl;
-            product.Category = model.Category;
-            product.ProductionDate = model.ProductionDate;
+            product.Name = updatedProduct.Name;
+            product.Description = updatedProduct.Description;
+            product.Price = updatedProduct.Price;
+            product.ImageUrl = updatedProduct.ImageUrl;
+            product.Category = updatedProduct.Category;
+            product.ProductionDate = updatedProduct.ProductionDate;
+
+            Console.WriteLine("Updating Product:");
+            Console.WriteLine($"Name: {product.Name}, Desc: {product.Description}, Price: {product.Price}");
+
+            // Optional but safe:
+            _context.Entry(product).State = EntityState.Modified;
 
             await _context.SaveChangesAsync();
 
             TempData["SuccessMessage"] = "Product updated successfully.";
             return RedirectToAction(nameof(ViewProducts));
         }
+
 
         // GET: Farmer/DeleteProduct/5
         public async Task<IActionResult> DeleteProduct(int id)

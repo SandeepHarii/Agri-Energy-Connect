@@ -12,17 +12,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zqgekinimp"},{"Name":"integrity","Value":"sha256-tafwibrJXL\u002BeJfJX6\u002B5xJDmQXia5I1U5/fSCLcvrDto="},{"Name":"label","Value":"_content/AgriEnergyConnect/AgriEnergyConnect.bundle.scp.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1135"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022tafwibrJXL\u002BeJfJX6\u002B5xJDmQXia5I1U5/fSCLcvrDto=\u0022"},{"Name":"Last-Modified","Value":"Sun, 11 May 2025 14:21:02 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/AgriEnergyConnect/css/site.bhrmru58xi.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bhrmru58xi"},{"Name":"integrity","Value":"sha256-n7fZNYtr3\u002BZlnqC1jAQblSo4rNo3pn8MzH6PYIs7\u002BkM="},{"Name":"label","Value":"_content/AgriEnergyConnect/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"7755"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022n7fZNYtr3\u002BZlnqC1jAQblSo4rNo3pn8MzH6PYIs7\u002BkM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 10 May 2025 22:40:53 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AgriEnergyConnect/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-n7fZNYtr3\u002BZlnqC1jAQblSo4rNo3pn8MzH6PYIs7\u002BkM="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"7755"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022n7fZNYtr3\u002BZlnqC1jAQblSo4rNo3pn8MzH6PYIs7\u002BkM=\u0022"},{"Name":"Last-Modified","Value":"Sat, 10 May 2025 22:40:53 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-\u002BwW2HrIqnG/vKnwW3YG\u002BXinnctEWxtgYe373ENrybK4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"8079"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022\u002BwW2HrIqnG/vKnwW3YG\u002BXinnctEWxtgYe373ENrybK4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 13 May 2025 15:59:52 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/AgriEnergyConnect/css/site.pn7ht35day.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"pn7ht35day"},{"Name":"integrity","Value":"sha256-\u002BwW2HrIqnG/vKnwW3YG\u002BXinnctEWxtgYe373ENrybK4="},{"Name":"label","Value":"_content/AgriEnergyConnect/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"8079"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022\u002BwW2HrIqnG/vKnwW3YG\u002BXinnctEWxtgYe373ENrybK4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 13 May 2025 15:59:52 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AgriEnergyConnect/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>

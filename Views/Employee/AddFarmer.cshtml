@@ -5,41 +5,61 @@
     ViewData["Title"] = "Add Farmer";
 }
 
-<h2>Add Farmer</h2>
+<div class="row">
+    <div class="wrapper mx-auto">
+        <section>
+            <h2 class="text-center mb-3">Add Farmer</h2>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
 
-<form asp-action="AddFarmer" method="post">
-    <div class="mb-3">
-        <label asp-for="FirstName" class="form-label"></label>
-        <input asp-for="FirstName" class="form-control" />
-        <span asp-validation-for="FirstName" class="text-danger"></span>
+            <div class="Wrapper">
+                <form asp-action="AddFarmer" method="post">
+                    <div class="mb-3 input-with-icon">
+                        <input asp-for="FirstName" class="form-control" placeholder="First Name" />
+                        <i class='bx bx-user'></i>
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 input-with-icon">
+                        <input asp-for="LastName" class="form-control" placeholder="Last Name" />
+                        <i class='bx bx-user'></i>
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 input-with-icon">
+                        <input asp-for="Email" class="form-control" placeholder="Email" />
+                        <i class='bx bxs-envelope'></i>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 input-with-icon">
+                        <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number" />
+                        <i class='bx bxs-phone'></i>
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 input-with-icon">
+                        <input asp-for="Password" class="form-control" placeholder="Password" type="password" />
+                        <i class='bx bxs-lock-alt'></i>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col d-grid">
+                            <button class="btn btn-primary rounded" type="submit">Create Farmer</button>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col d-grid">
+                            <a class="btn btn-outline-primary rounded" href="@Url.Action("Dashboard", "Employee")" class="text-muted">Back to Dashboard</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
     </div>
-
-    <div class="mb-3">
-        <label asp-for="LastName" class="form-label"></label>
-        <input asp-for="LastName" class="form-control" />
-        <span asp-validation-for="LastName" class="text-danger"></span>
-    </div>
-
-    <div class="mb-3">
-        <label asp-for="Email" class="form-label"></label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
-
-    <div class="mb-3">
-        <label asp-for="PhoneNumber" class="form-label"></label>
-        <input asp-for="PhoneNumber" class="form-control" />
-        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
-    </div>
-
-    <div class="mb-3">
-        <label asp-for="Password" class="form-label"></label>
-        <input asp-for="Password" class="form-control" />
-        <span asp-validation-for="Password" class="text-danger"></span>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Create Farmer</button>
-</form>
+</div>
 
 @section Scripts {
     @{

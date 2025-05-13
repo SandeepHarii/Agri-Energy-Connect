@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "39TUq0Zs2WKS2EMfe7MBbCJZvyqdLWj4lWuNHon2Orc=",
+  "Hash": "R3dmntDX3v24NJ2RauVQs0eJsaYuIh61gvcgKfEKF2Y=",
   "Source": "AgriEnergyConnect",
   "BasePath": "_content/AgriEnergyConnect",
   "Mode": "Default",
@@ -1333,8 +1333,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "bhrmru58xi",
-      "Integrity": "n7fZNYtr3+ZlnqC1jAQblSo4rNo3pn8MzH6PYIs7+kM=",
+      "Fingerprint": "pn7ht35day",
+      "Integrity": "+wW2HrIqnG/vKnwW3YG+XinnctEWxtgYe373ENrybK4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -2745,51 +2745,6 @@
       ]
     },
     {
-      "Route": "css/site.bhrmru58xi.css",
-      "AssetFile": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "7755"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"n7fZNYtr3+ZlnqC1jAQblSo4rNo3pn8MzH6PYIs7+kM=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 22:40:53 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "bhrmru58xi"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-n7fZNYtr3+ZlnqC1jAQblSo4rNo3pn8MzH6PYIs7+kM="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -2800,7 +2755,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7755"
+          "Value": "8079"
         },
         {
           "Name": "Content-Type",
@@ -2808,11 +2763,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"n7fZNYtr3+ZlnqC1jAQblSo4rNo3pn8MzH6PYIs7+kM=\""
+          "Value": "\"+wW2HrIqnG/vKnwW3YG+XinnctEWxtgYe373ENrybK4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 10 May 2025 22:40:53 GMT"
+          "Value": "Tue, 13 May 2025 15:59:52 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2822,7 +2777,52 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-n7fZNYtr3+ZlnqC1jAQblSo4rNo3pn8MzH6PYIs7+kM="
+          "Value": "sha256-+wW2HrIqnG/vKnwW3YG+XinnctEWxtgYe373ENrybK4="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.pn7ht35day.css",
+      "AssetFile": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8079"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+wW2HrIqnG/vKnwW3YG+XinnctEWxtgYe373ENrybK4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 13 May 2025 15:59:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pn7ht35day"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+wW2HrIqnG/vKnwW3YG+XinnctEWxtgYe373ENrybK4="
         }
       ]
     },

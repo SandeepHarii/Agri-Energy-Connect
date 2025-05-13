@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect - current\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect - current\\views\\employee\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:views\\employee\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect - current\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect - current\\views\\employee\\viewproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:views\\employee\\viewproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect - current\\views\\employee\\addfarmer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:views\\employee\\addfarmer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect - current\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect - current\\viewmodels\\addfarmerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:viewmodels\\addfarmerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect - current\\views\\employee\\viewproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:views\\employee\\viewproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,86 +29,58 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EmployeeController.cs",
-              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Controllers\\EmployeeController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
-              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Controllers\\EmployeeController.cs",
-              "RelativeToolTip": "Controllers\\EmployeeController.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAQwBwAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:11:24.851Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Dashboard.cshtml",
-              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\Dashboard.cshtml",
-              "RelativeDocumentMoniker": "Views\\Employee\\Dashboard.cshtml",
-              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\Dashboard.cshtml",
-              "RelativeToolTip": "Views\\Employee\\Dashboard.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-12T11:44:58.695Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AddFarmer.cshtml",
-              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\AddFarmer.cshtml",
-              "RelativeDocumentMoniker": "Views\\Employee\\AddFarmer.cshtml",
-              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\AddFarmer.cshtml",
-              "RelativeToolTip": "Views\\Employee\\AddFarmer.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-12T11:45:13.933Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ViewProducts.cshtml",
-              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\ViewProducts.cshtml",
-              "RelativeDocumentMoniker": "Views\\Employee\\ViewProducts.cshtml",
-              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\ViewProducts.cshtml",
-              "RelativeToolTip": "Views\\Employee\\ViewProducts.cshtml",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-12T11:45:49.936Z",
+              "WhenOpened": "2025-05-13T16:01:14.614Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAACBAAAAAAAAAA==",
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Employee\\Dashboard.cshtml",
+              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\Dashboard.cshtml",
+              "RelativeToolTip": "Views\\Employee\\Dashboard.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-12T13:14:58.922Z",
+              "WhenOpened": "2025-05-13T14:50:57.714Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AddFarmerViewModel.cs",
-              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\ViewModels\\AddFarmerViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\AddFarmerViewModel.cs",
-              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\ViewModels\\AddFarmerViewModel.cs",
-              "RelativeToolTip": "ViewModels\\AddFarmerViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-12T13:10:30.06Z",
-              "EditorCaption": ""
+              "DocumentIndex": 2,
+              "Title": "AddFarmer.cshtml",
+              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\AddFarmer.cshtml",
+              "RelativeDocumentMoniker": "Views\\Employee\\AddFarmer.cshtml",
+              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\AddFarmer.cshtml",
+              "RelativeToolTip": "Views\\Employee\\AddFarmer.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAIwEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-13T14:51:17.715Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ViewProducts.cshtml",
+              "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\ViewProducts.cshtml",
+              "RelativeDocumentMoniker": "Views\\Employee\\ViewProducts.cshtml",
+              "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\ViewProducts.cshtml",
+              "RelativeToolTip": "Views\\Employee\\ViewProducts.cshtml",
+              "ViewState": "AgIAACgAAAAAAAAAAAAIwEQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-13T14:52:08.228Z"
             }
           ]
         }

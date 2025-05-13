@@ -1,7 +1,7 @@
 ﻿using AgriEnergyConnect.Models;
+using AgriEnergyConnect.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using AgriEnergyConnect.ViewModels;
 
 namespace AgriEnergyConnect.Controllers
 {
@@ -11,7 +11,9 @@ namespace AgriEnergyConnect.Controllers
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<IdentityRole> roleManager)
+        public AccountController(UserManager<ApplicationUser> userManager,
+                                 SignInManager<ApplicationUser> signInManager,
+                                 RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -20,17 +22,41 @@ namespace AgriEnergyConnect.Controllers
 
         // GET: /Account/Login
         [HttpGet]
-        public IActionResult Login() => View();
+        public IActionResult Login(string returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
 
         // POST: /Account/Login
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
-            if (!ModelState.IsValid) return View(model);
+            ViewData["ReturnUrl"] = returnUrl;
 
-            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+
             if (result.Succeeded)
-                return RedirectToAction("Index", "Home");
+            {
+                var user = await _userManager.FindByEmailAsync(model.Email);
+                var roles = await _userManager.GetRolesAsync(user);
+
+                // ✅ Redirect back to the original page if available and safe
+                if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                    return Redirect(returnUrl);
+
+                // ✅ Redirect by role
+                if (roles.Contains("Farmer"))
+                    return RedirectToAction("Dashboard", "Farmer");
+
+                if (roles.Contains("Employee"))
+                    return RedirectToAction("Dashboard", "Employee");
+
+                return RedirectToAction("Index", "Home"); // Fallback
+            }
 
             ModelState.AddModelError("", "Invalid login attempt.");
             return View(model);
@@ -44,7 +70,8 @@ namespace AgriEnergyConnect.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+                return View(model);
 
             var user = new ApplicationUser
             {
@@ -56,22 +83,28 @@ namespace AgriEnergyConnect.Controllers
                 UserType = model.UserType
             };
 
-            // Create user
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
-                // Ensure roles are added if they don't exist
-                if (!await _roleManager.RoleExistsAsync(model.UserType.ToString()))
+                string roleName = model.UserType.ToString();
+                if (!await _roleManager.RoleExistsAsync(roleName))
                 {
-                    await _roleManager.CreateAsync(new IdentityRole(model.UserType.ToString()));
+                    await _roleManager.CreateAsync(new IdentityRole(roleName));
                 }
 
-                // Assign the role
-                var roleResult = await _userManager.AddToRoleAsync(user, model.UserType.ToString());
-
+                var roleResult = await _userManager.AddToRoleAsync(user, roleName);
                 if (roleResult.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
+
+                    var roles = await _userManager.GetRolesAsync(user);
+
+                    if (roles.Contains("Farmer"))
+                        return RedirectToAction("Dashboard", "Farmer");
+
+                    if (roles.Contains("Employee"))
+                        return RedirectToAction("Dashboard", "Employee");
+
                     return RedirectToAction("Index", "Home");
                 }
 
@@ -93,7 +126,7 @@ namespace AgriEnergyConnect.Controllers
         [HttpPost]
         public IActionResult ForgotPassword(string email)
         {
-            // Logic for handling password reset
+            // TODO: Add password reset logic
             return View();
         }
 
