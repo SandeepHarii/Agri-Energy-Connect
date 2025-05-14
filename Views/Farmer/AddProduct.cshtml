@@ -2,7 +2,7 @@
 @model ProductViewModel
 
 @{
-    ViewData["Title"] = "Add Product";
+    ViewData["Title"] = "Add Product - AgriEnergyConnect";
 }
 
 <div class="row">
@@ -45,8 +45,7 @@
                     </div>
 
                     <div class="mb-3 input-with-icon">
-                        <input asp-for="ProductionDate" class="form-control" type="date" />
-                        <i class='bx bx-calendar'></i>
+                        <input asp-for="ProductionDate" class="form-control" type="date" placeholder="Production Date" />
                         <span asp-validation-for="ProductionDate" class="text-danger"></span>
                     </div>
 

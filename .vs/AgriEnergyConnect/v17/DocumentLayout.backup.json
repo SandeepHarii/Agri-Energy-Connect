@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:views\\employee\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect - current\\views\\employee\\addfarmer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:views\\employee\\addfarmer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect - current\\views\\employee\\viewproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:views\\employee\\viewproducts.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|d:\\sandeep data\\final year\\semester 5\\prog7311 - programming 3a\\poe\\part 2\\agrienergyconnect - current\\views\\employee\\addfarmer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A4820FE9-3DEA-44A7-B327-93FF204954FF}|AgriEnergyConnect.csproj|solutionrelative:views\\employee\\addfarmer.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -36,34 +36,34 @@
               "RelativeDocumentMoniker": "Views\\Employee\\Dashboard.cshtml",
               "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\Dashboard.cshtml",
               "RelativeToolTip": "Views\\Employee\\Dashboard.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-13T14:50:57.714Z",
+              "WhenOpened": "2025-05-14T11:55:28.393Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AddFarmer.cshtml",
               "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\AddFarmer.cshtml",
               "RelativeDocumentMoniker": "Views\\Employee\\AddFarmer.cshtml",
               "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\AddFarmer.cshtml",
               "RelativeToolTip": "Views\\Employee\\AddFarmer.cshtml",
-              "ViewState": "AgIAACkAAAAAAAAAAAAIwEQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-13T14:51:17.715Z"
+              "WhenOpened": "2025-05-14T11:55:31.003Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "ViewProducts.cshtml",
               "DocumentMoniker": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\ViewProducts.cshtml",
               "RelativeDocumentMoniker": "Views\\Employee\\ViewProducts.cshtml",
               "ToolTip": "D:\\Sandeep Data\\Final Year\\Semester 5\\PROG7311 - Programming 3A\\PoE\\Part 2\\AgriEnergyConnect - Current\\Views\\Employee\\ViewProducts.cshtml",
               "RelativeToolTip": "Views\\Employee\\ViewProducts.cshtml",
-              "ViewState": "AgIAACgAAAAAAAAAAAAIwEQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAACyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-13T14:52:08.228Z"
+              "WhenOpened": "2025-05-14T11:55:30.065Z"
             }
           ]
         }
