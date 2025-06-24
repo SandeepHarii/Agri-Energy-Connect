@@ -1,0 +1,115 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="wrapper mx-auto">
+        <h2 class="text-center mb-4">Register</h2>
+
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3" role="alert"></div>
+
+        <form id="registerForm" method="post">
+            <!-- First Name -->
+            <div class="input-with-icon mb-3">
+                <input class="form-control" asp-for="Input.FirstName" placeholder="First Name" />
+                <i class="bx bx-user"></i>
+                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+            </div>
+
+            <!-- Last Name -->
+            <div class="input-with-icon mb-3">
+                <input class="form-control" asp-for="Input.LastName" placeholder="Last Name" />
+                <i class="bx bx-user"></i>
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="input-with-icon mb-3">
+                <input class="form-control" asp-for="Input.PhoneNumber" placeholder="Phone Number" />
+                <i class="bx bx-phone"></i>
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+            </div>
+
+            <!-- Email Address -->
+            <div class="input-with-icon mb-3">
+                <input class="form-control" asp-for="Input.Email" placeholder="Email Address" />
+                <i class="bx bx-envelope"></i>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+
+            <!-- Role Dropdown -->
+            <div class="input-with-icon mb-3">
+                <select class="form-control" asp-for="Input.UserType">
+                    <option value="">Select Role</option>
+                    <option value="Farmer">Farmer</option>
+                    <option value="Employee">Employee</option>
+                </select>
+                <span asp-validation-for="Input.UserType" class="text-danger"></span>
+            </div>
+
+            <!-- Password -->
+            <div class="input-with-icon mb-3 position-relative">
+                <input class="form-control" asp-for="Input.Password" placeholder="Password" type="password" id="passwordInput" />
+                <i class="bx bx-lock-alt"></i>
+                <i class='bx bx-show position-absolute end-0 top-50 translate-middle-y me-3 cursor-pointer' id="togglePassword" style="z-index: 2;"></i>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="input-with-icon mb-4 position-relative">
+                <input class="form-control" asp-for="Input.ConfirmPassword" placeholder="Confirm Password" type="password" id="confirmPasswordInput" />
+                <i class="bx bx-lock-alt"></i>
+                <i class='bx bx-show position-absolute end-0 top-50 translate-middle-y me-3 cursor-pointer' id="toggleConfirmPassword" style="z-index: 2;"></i>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+
+
+
+            <!-- Buttons -->
+            <div class="d-flex gap-3">
+                <button type="submit" class="btn btn-primary rounded flex-grow-1">Register</button>
+            </div>
+
+            <p></p>
+
+            <div class="d-flex gap-3">
+                <a class="btn btn-outline-primary rounded flex-grow-1" href="/" role="button">Cancel</a>
+            </div>
+
+            <p></p>
+
+            <div class="register-link text-center mb-3">
+                <p>Already have an account? <a href="/Identity/Account/Login">Login</a></p>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const togglePassword = document.getElementById("togglePassword");
+            const passwordInput = document.getElementById("passwordInput");
+
+            const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
+            const confirmPasswordInput = document.getElementById("confirmPasswordInput");
+
+            togglePassword.addEventListener("click", function () {
+                const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+                passwordInput.setAttribute("type", type);
+                this.classList.toggle("bx-show");
+                this.classList.toggle("bx-hide");
+            });
+
+            toggleConfirmPassword.addEventListener("click", function () {
+                const type = confirmPasswordInput.getAttribute("type") === "password" ? "text" : "password";
+                confirmPasswordInput.setAttribute("type", type);
+                this.classList.toggle("bx-show");
+                this.classList.toggle("bx-hide");
+            });
+        });
+    </script>
+}

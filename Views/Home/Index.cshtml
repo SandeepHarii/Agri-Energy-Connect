@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container mx-auto">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to AgriEnergy Connect</h1>
+            <p>Your hard work deserves more. We connect you with the tools, resources, and opportunities to turn your farming efforts into real rewards.</p>
+           
+        </div>
+    </section>
+
+    <!-- Feature Cards -->
+    <div class="card-container">
+        <div class="card">
+            <div class="card-icon">
+                <i class="bx bx-log-in"></i> <!-- Relevant icon for Login -->
+            </div>
+            <div class="card-content">
+                <h2>Login</h2>
+                <p>Access your profile to manage your payments.</p>
+                <a href="/Identity/Account/Login" class="btn-action">
+                    <i class="bx bx-log-in"></i> Login
+                </a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-icon">
+                <i class="bx bx-user-plus"></i> <!-- Relevant icon for Register -->
+            </div>
+            <div class="card-content">
+                <h2>Register</h2>
+                <p>Create a new profile and get started.</p>
+                <a href="/Identity/Account/Register" class="btn-action">
+                    <i class="bx bx-user-plus"></i> Register
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

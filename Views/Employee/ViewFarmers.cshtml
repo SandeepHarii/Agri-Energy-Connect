@@ -1,0 +1,89 @@
+﻿@using AgriEnergyConnect.ViewModels;
+@model ViewFarmerViewModel
+
+@{
+    ViewData["Title"] = "View All Farmers - AgriEnergyConnect";
+}
+
+<div class="w-100 px-4 py-5" style="background-color: #F5F5F5;">
+    <div class="card shadow-sm border-0 w-100" style="background-color: #FFFFFF; border-left: 5px solid #2E8B57;">
+        <div class="card-body">
+            <h2 class="text-center mb-4" style="color: #2E8B57;">All Farmers</h2>
+
+            @if (Model.Farmers.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-bordered align-middle shadow-sm w-100" style="background-color: #FFFFFF;">
+                        <thead style="background-color: #4682B4; color: white;">
+                            <tr>
+                                <th>Farmer Name</th>
+                                <th>Phone Number</th>
+                                <th>Status</th>
+                                <th>Date Registered</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var (farmer, index) in Model.Farmers.Select((value, i) => (value, i)))
+                            {
+                                <tr class="@(index % 2 == 0 ? "table-light" : "table-custom")">
+                                    <td>@($"{farmer.FirstName} {farmer.LastName}")</td>
+                                    <td>@farmer.PhoneNumber</td>
+                                    <td>@farmer.Status</td>
+                                    <td>@farmer.RegistrationDate.ToString("dd MMM yyyy")</td>
+                                    <td>
+                                        @if (farmer.Status == "Pending")
+                                        {
+                                            <form asp-action="ActivateFarmer" asp-controller="Employee" method="post">
+                                                <input type="hidden" name="email" value="@farmer.Email" />
+                                                <button type="submit" class="btn btn-sm btn-success rounded">Activate</button>
+                                            </form>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-muted">—</span>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col d-grid">
+                        <a class="btn btn-outline-primary rounded" href="@Url.Action("Dashboard", "Employee")" class="text-muted">Back to Dashboard</a>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <p class="text-muted text-center mt-4">No farmers found.</p>
+            }
+
+           <!-- @* Toast notification for activation success *@
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1055;">
+                    <div class="toast align-items-center text-white bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="d-flex">
+                            <div class="toast-body">
+                                @TempData["SuccessMessage"]
+                            </div>
+                            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+                        toastElList.forEach(function (toastEl) {
+                            new bootstrap.Toast(toastEl).show();
+                        });
+                    });
+                </script>
+            } -->
+        </div>
+    </div>
+</div>

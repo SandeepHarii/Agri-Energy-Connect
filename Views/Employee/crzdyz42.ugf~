@@ -1,0 +1,43 @@
+﻿@using AgriEnergyConnect.ViewModels;
+@model ViewFarmerViewModel
+
+@{
+    ViewData["Title"] = "View All Farmers - AgriEnergyConnect";
+}
+
+@if (Model.Farmers.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-bordered align-middle shadow-sm w-100" style="background-color: #FFFFFF;">
+            <thead style="background-color: #4682B4; color: white;">
+                <tr>
+                    <th>Farmer Name</th>
+                    <th>Phone Number</th>
+                    <th>Status</th>
+                    <th>Date Registered</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var (farmer, index) in Model.Farmers.Select((value, i) => (value, i)))
+                {
+                    <tr class="@(index % 2 == 0 ? "table-light" : "table-custom")">
+                        <td>@($"{farmer.FirstName} {farmer.LastName}")</td>
+                        <td>@farmer.PhoneNumber</td>
+                        <td>@farmer.Status</td>
+                        <td>@farmer.RegistrationDate.ToString("dd MMM yyyy")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col d-grid">
+            <a class="btn btn-outline-primary rounded" href="@Url.Action("Dashboard", "Employee")" class="text-muted">Back to Dashboard</a>
+        </div>
+    </div>
+}
+else
+{
+    <p>No farmers found.</p>
+}

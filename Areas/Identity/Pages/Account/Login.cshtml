@@ -1,0 +1,76 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in - AgriEnergyConnect";
+    var returnUrl = ViewData["ReturnUrl"] as string;
+}
+
+<div class="row">
+    <div class="wrapper mx-auto">
+        <section>
+            <h2 class="text-center mb-3">Login</h2>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+            <div class="Wrapper">
+                <form id="account" method="post">
+                    <div class="mb-3 input-with-icon">
+                        <input asp-for="Input.Email" class="form-control" placeholder="Email" />
+                        <i class='bx bxs-envelope'></i>
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 position-relative input-with-icon">
+                        <input asp-for="Input.Password" class="form-control" placeholder="Password" type="password" id="passwordInput" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+
+                        <!-- Eye Icon -->
+                        <i class='bx bx-show position-absolute end-0 top-50 translate-middle-y me-3 cursor-pointer' id="togglePassword" style="z-index: 2;"></i>
+                    </div>
+
+
+                    <div class="remember-forgot mb-3 d-flex justify-content-between align-items-center">
+                        <label asp-for="Input.RememberMe" class="form-label d-flex align-items-center">
+                            <input class="form-check-input me-1" asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                        <a class="btn btn-link p-0" id="forgot-password" asp-area="Identity" asp-page="/Account/ForgotPassword">Forgot your password?</a>
+
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col d-grid">
+                            <button class="btn btn-primary rounded" type="submit">Login</button>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <a class="btn btn-outline-primary rounded flex-grow-1" href="/" role="button">Cancel</a>
+                    </div>
+
+                    <div class="register-link text-center mb-3 mt-3">
+                        <p>Don't have an account? <a href="/Identity/Account/Register">Register</a></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const togglePassword = document.getElementById("togglePassword");
+            const passwordInput = document.getElementById("passwordInput");
+
+            togglePassword.addEventListener("click", function () {
+                const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+                passwordInput.setAttribute("type", type);
+                this.classList.toggle("bx-show");
+                this.classList.toggle("bx-hide");
+            });
+        });
+    </script>
+}
+

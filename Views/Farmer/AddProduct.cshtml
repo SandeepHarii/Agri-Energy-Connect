@@ -1,0 +1,77 @@
+﻿@using AgriEnergyConnect.ViewModels;
+@model ProductViewModel
+
+@{
+    ViewData["Title"] = "Add Product - AgriEnergyConnect";
+}
+
+<div class="row">
+    <div class="wrapper mx-auto">
+        <section>
+            <h2 class="text-center mb-3">Add Product</h2>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+            <div class="Wrapper">
+
+                <form method="post" enctype="multipart/form-data" asp-action="AddProduct">
+
+                    <div class="mb-3 input-with-icon">
+                        <input asp-for="Name" class="form-control" placeholder="Product Name" />
+                        <i class='bx bx-cube'></i>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 input-with-icon">
+                        <textarea asp-for="Description" class="form-control" placeholder="Description"></textarea>
+                        <i class='bx bx-align-left'></i>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 input-with-icon">
+                        <input asp-for="Price" class="form-control" type="number" step="0.01" placeholder="Price" />
+                        <i class='bx bx-money'></i>
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 input-with-icon">
+                        <input asp-for="ImageFile" type="file" class="form-control" />
+                        <i class='bx bx-upload'></i>
+                        <span asp-validation-for="ImageFile" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 input-with-icon">
+                        <input asp-for="Category" class="form-control" placeholder="Category" />
+                        <i class='bx bx-category'></i>
+                        <span asp-validation-for="Category" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3 input-with-icon">
+                        <input asp-for="ProductionDate" class="form-control" type="date" placeholder="Production Date" />
+                        <span asp-validation-for="ProductionDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col d-grid">
+                            <button class="btn btn-primary rounded" type="submit">Add Product</button>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col d-grid">
+                            <a class="btn btn-outline-primary rounded" href="@Url.Action("Dashboard", "Farmer")" class="text-muted">Back to Dashboard</a>
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

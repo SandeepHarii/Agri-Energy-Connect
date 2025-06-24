@@ -1,0 +1,60 @@
+﻿@using AgriEnergyConnect.ViewModels;
+@model ProductFilterViewModel
+
+@{
+    ViewData["Title"] = "View All Products - AgriEnergyConnect";
+}
+
+<div class="w-100 px-4 py-5" style="background-color: #F5F5F5;">
+    <div class="card shadow-sm border-0 w-100" style="background-color: #FFFFFF; border-left: 5px solid #2E8B57;">
+        <div class="card-body">
+            <h2 class="text-center mb-4" style="color: #2E8B57;">All Farmer Products</h2>
+
+            <form method="get" class="mb-4">
+                <div class="row gx-2">
+                    <div class="col-md-10">
+                        <input type="text" id="searchBox" name="searchTerm" value="@Model.SearchTerm"
+                               class="form-control"
+                               placeholder="Search by Product Name, Farmer, Price, or Production Date"
+                               style="border: 1px solid #D2B48C;" />
+
+                    </div>
+                    <!--<div class="col-md-1 d-grid">
+                        <button class="btn" type="submit" style="background-color: #3CB371; color: white;">Search</button>
+                    </div>-->
+                    <div class="col-md-1 d-grid">
+                        <a class="btn" href="@Url.Action("ViewProducts", "Employee")" style="background-color: #1E90FF; color: white;">Clear</a>
+                    </div> 
+                </div>
+            </form>
+            <div id="productTableWrapper">
+                @await Html.PartialAsync("_ProductTablePartial", Model)
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#searchBox').on('input', function () {
+                const searchTerm = $(this).val();
+
+                $.ajax({
+                    url: '@Url.Action("ViewProducts", "Employee")',
+                    type: 'GET',
+                    data: { searchTerm },
+                    success: function (response) {
+                        const newHtml = $(response).find('#productTableWrapper').html();
+                        $('#productTableWrapper').html(newHtml);
+                    },
+                    error: function () {
+                        console.error('AJAX request failed');
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</div>

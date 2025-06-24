@@ -1,0 +1,48 @@
+﻿@using AgriEnergyConnect.ViewModels;
+@model ProductFilterViewModel
+
+@if (Model.Products.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-bordered align-middle shadow-sm w-100" style="background-color: #FFFFFF;">
+            <thead style="background-color: #4682B4; color: white;">
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Farmer</th>
+                    <th>Date Added</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var (product, index) in Model.Products.Select((value, i) => (value, i)))
+                {
+                    <tr class="@(index % 2 == 0 ? "table-light" : "table-custom")">
+                        <td>
+                            @if (!string.IsNullOrEmpty(product.ImageFileName))
+                            {
+                                <a href="~/uploads/@product.ImageFileName" class="glightbox" data-glightbox="title:@product.Name">
+                                    <img src="~/uploads/@product.ImageFileName" alt="Product Image" style="height: 60px; cursor: pointer;" />
+                                </a>
+                            }
+                            else
+                            {
+                                <span>No Image</span>
+                            }
+                        </td>
+                        <td>@product.Name</td>
+                        <td>@product.Description</td>
+                        <td>@product.Price.ToString("C")</td>
+                        <td>@($"{product.Farmer.FirstName} {product.Farmer.LastName}")</td>
+                        <td>@product.ProductionDate.ToShortDateString()</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p class="text-muted text-center mt-4">No products found.</p>
+}
