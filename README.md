@@ -20,6 +20,9 @@ Agri Energy Connect is a web platform connecting farmers with sustainable techno
 **Tech Stack**
 ASP.NET Core MVC, Entity Framework Core, SQL Lite, Bootstrap, jQuery
 
+**Screenshots / Demo**
+- Watch a demo of the app here: [YouTube Video](https://youtu.be/H0o7uScgHO8)
+
 **Setup Instructions**
 
 1. Clone the repo: `git clone https://github.com/SandeepHarii/Agri-Energy-Connect`
