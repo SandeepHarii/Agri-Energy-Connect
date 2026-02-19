@@ -6,6 +6,10 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Threading.Tasks;
+<<<<<<< HEAD
+=======
+using AgriEnergyConnect.Models;
+>>>>>>> agri-part3/main
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -16,9 +20,15 @@ namespace AgriEnergyConnect.Areas.Identity.Pages.Account
 {
     public class ResetPasswordModel : PageModel
     {
+<<<<<<< HEAD
         private readonly UserManager<IdentityUser> _userManager;
 
         public ResetPasswordModel(UserManager<IdentityUser> userManager)
+=======
+        private readonly UserManager<ApplicationUser> _userManager;
+
+        public ResetPasswordModel(UserManager<ApplicationUser> userManager)
+>>>>>>> agri-part3/main
         {
             _userManager = userManager;
         }

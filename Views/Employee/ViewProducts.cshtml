@@ -10,6 +10,7 @@
         <div class="card-body">
             <h2 class="text-center mb-4" style="color: #2E8B57;">All Farmer Products</h2>
 
+<<<<<<< HEAD
             <form method="get" class="mb-4">
                 <div class="row gx-2">
                     <div class="col-md-10">
@@ -17,6 +18,15 @@
                     </div>
                     <div class="col-md-1 d-grid">
                         <button class="btn" type="submit" style="background-color: #3CB371; color: white;">Search</button>
+=======
+            <form id="searchForm" method="get" class="mb-4">
+                <div class="row gx-2">
+                    <div class="col-md-11">
+                        <input type="text" id="searchBox" name="searchTerm" value="@Model.SearchTerm"
+                               class="form-control"
+                               placeholder="Search by Product Name, Farmer, Price, or Production Date"
+                               style="border: 1px solid #D2B48C;" autocomplete="off" />
+>>>>>>> agri-part3/main
                     </div>
                     <div class="col-md-1 d-grid">
                         <a class="btn" href="@Url.Action("ViewProducts", "Employee")" style="background-color: #1E90FF; color: white;">Clear</a>
@@ -24,6 +34,7 @@
                 </div>
             </form>
 
+<<<<<<< HEAD
             @if (Model.Products.Any())
             {
                 <div class="table-responsive">
@@ -66,3 +77,49 @@
         </div>
     </div>
 </div>
+=======
+            <div id="productTableWrapper">
+                @await Html.PartialAsync("_ProductTablePartial", Model)
+            </div>
+
+        </div>
+
+        <div class="row mb-3">
+            <div class="col d-grid">
+                <a class="btn btn-outline-primary rounded" href="@Url.Action("Dashboard", "Employee")" class="text-muted">Back to Dashboard</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            function doSearch(term) {
+                console.log('Searching for:', term); // debug log
+                $.ajax({
+                    url: '@Url.Action("ViewProducts", "Employee")',
+                    type: 'GET',
+                    data: { searchTerm: term },
+                    success: function (response) {
+                        console.log('AJAX success');
+                        $('#productTableWrapper').html(response);
+                    },
+                    error: function () {
+                        console.error('AJAX request failed');
+                    }
+                });
+            }
+
+            $('#searchBox').on('input', function () {
+                doSearch($(this).val());
+            });
+
+            $('#searchForm').on('submit', function (e) {
+                e.preventDefault();
+                doSearch($('#searchBox').val());
+            });
+        });
+    </script>
+</div>
+>>>>>>> agri-part3/main

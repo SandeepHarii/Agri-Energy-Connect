@@ -20,8 +20,15 @@ namespace AgriEnergyConnect.ViewModels
         [Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than zero.")]
         public decimal Price { get; set; }
 
+<<<<<<< HEAD
         // ImageUrl: An optional field that allows the user to provide a URL to an image of the product.
         public string ImageUrl { get; set; } // Optional image upload
+=======
+        // ImageFileName: An optional field that allows the user to provide a URL to an image of the product.
+        [Display(Name = "Upload Image")]
+        public IFormFile? ImageFile { get; set; } // for image uploads
+        public string? ImageFileName { get; set; }// Optional image upload
+>>>>>>> agri-part3/main
 
         // Category: The category to which the product belongs. This is a required field.
         [Required]

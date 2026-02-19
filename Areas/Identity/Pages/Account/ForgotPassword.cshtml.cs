@@ -7,6 +7,10 @@ using System.ComponentModel.DataAnnotations;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+<<<<<<< HEAD
+=======
+using AgriEnergyConnect.Models;
+>>>>>>> agri-part3/main
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
@@ -18,10 +22,17 @@ namespace AgriEnergyConnect.Areas.Identity.Pages.Account
 {
     public class ForgotPasswordModel : PageModel
     {
+<<<<<<< HEAD
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IEmailSender _emailSender;
 
         public ForgotPasswordModel(UserManager<IdentityUser> userManager, IEmailSender emailSender)
+=======
+        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IEmailSender _emailSender;
+
+        public ForgotPasswordModel(UserManager<ApplicationUser> userManager, IEmailSender emailSender)
+>>>>>>> agri-part3/main
         {
             _userManager = userManager;
             _emailSender = emailSender;
@@ -54,7 +65,11 @@ namespace AgriEnergyConnect.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByEmailAsync(Input.Email);
+<<<<<<< HEAD
                 if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
+=======
+                if (user == null)
+>>>>>>> agri-part3/main
                 {
                     // Don't reveal that the user does not exist or is not confirmed
                     return RedirectToPage("./ForgotPasswordConfirmation");

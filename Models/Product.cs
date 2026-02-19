@@ -18,7 +18,11 @@ public class Product
     public decimal Price { get; set; }
 
     // Image URL for the product (e.g., a link to an image hosted online)
+<<<<<<< HEAD
     public string ImageUrl { get; set; }
+=======
+    public string ImageFileName { get; set; }
+>>>>>>> agri-part3/main
 
     // Required Category of the product. This helps classify products (e.g., "Vegetable", "Fruit")
     [Required]

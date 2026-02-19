@@ -1,0 +1,24 @@
+﻿using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+
+public class TestEmailController : Controller
+{
+    private readonly IEmailSender _emailSender;
+
+    public TestEmailController(IEmailSender emailSender)
+    {
+        _emailSender = emailSender;
+    }
+
+    public async Task<IActionResult> SendSimpleEmail()
+    {
+        await _emailSender.SendEmailAsync(
+            "Sandeep.Hari09@gmail.com", // to
+            "Test Email",               // subject
+            "Hello Sandeep"             // plain text body
+        );
+
+        return Content("Email sent!");
+    }
+}

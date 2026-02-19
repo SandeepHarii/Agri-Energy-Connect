@@ -36,17 +36,75 @@ namespace AgriEnergyConnect.Controllers
 
         // POST: Farmer/AddProduct - Handle the form submission to add a new product
         [HttpPost]
+<<<<<<< HEAD
         [ValidateAntiForgeryToken] // Protect against CSRF attacks
         public async Task<IActionResult> AddProduct(ProductViewModel model)
         {
             if (ModelState.IsValid) // Check if the model is valid
             {
                 // Create a new Product object with the values from the view model
+=======
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddProduct(ProductViewModel model)
+        {
+            Console.WriteLine("AddProduct POST triggered");
+
+            if (!ModelState.IsValid)
+            {
+                Console.WriteLine("ModelState is invalid");
+
+                foreach (var key in ModelState.Keys)
+                {
+                    var errors = ModelState[key].Errors;
+                    foreach (var error in errors)
+                    {
+                        Console.WriteLine($"Validation Error in '{key}': {error.ErrorMessage}");
+                    }
+                }
+
+                return View(model);
+            }
+
+            string uniqueFileName = null;
+
+            if (model.ImageFile != null && model.ImageFile.Length > 0)
+            {
+                Console.WriteLine("Image file detected");
+
+                try
+                {
+                    var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+                    Directory.CreateDirectory(uploadsFolder);
+
+                    uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ImageFile.FileName);
+                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await model.ImageFile.CopyToAsync(fileStream);
+                    }
+
+                    Console.WriteLine($"Image saved to: {filePath}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error saving image: {ex.Message}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No image uploaded");
+            }
+
+            try
+            {
+>>>>>>> agri-part3/main
                 var product = new Product
                 {
                     Name = model.Name,
                     Description = model.Description,
                     Price = model.Price,
+<<<<<<< HEAD
                     ImageUrl = model.ImageUrl,
                     Category = model.Category,
                     ProductionDate = model.ProductionDate,
@@ -63,6 +121,30 @@ namespace AgriEnergyConnect.Controllers
             return View(model); // If the model is invalid, return the view with errors
         }
 
+=======
+                    ImageFileName = uniqueFileName,
+                    Category = model.Category,
+                    ProductionDate = model.ProductionDate,
+                    UserID = User.FindFirstValue(ClaimTypes.NameIdentifier)
+                };
+
+                _context.Products.Add(product);
+                await _context.SaveChangesAsync();
+
+                Console.WriteLine("✅ Product saved to DB");
+
+                TempData["SuccessMessage"] = "Product added successfully!";
+                return RedirectToAction(nameof(ViewProducts));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"🔥 Error saving product to DB: {ex.Message}");
+                return View(model);
+            }
+        }
+
+
+>>>>>>> agri-part3/main
         // GET: Farmer/ViewProducts - Display all products added by the current farmer
         public async Task<IActionResult> ViewProducts()
         {
@@ -93,7 +175,11 @@ namespace AgriEnergyConnect.Controllers
                 Name = product.Name,
                 Description = product.Description,
                 Price = product.Price,
+<<<<<<< HEAD
                 ImageUrl = product.ImageUrl,
+=======
+                ImageFileName = product.ImageFileName,
+>>>>>>> agri-part3/main
                 Category = product.Category,
                 ProductionDate = product.ProductionDate
             };
@@ -103,6 +189,7 @@ namespace AgriEnergyConnect.Controllers
 
         // POST: Farmer/EditProduct/5 - Handle the form submission to update a product
         [HttpPost]
+<<<<<<< HEAD
         [ValidateAntiForgeryToken] // Protect against CSRF attacks
         public async Task<IActionResult> EditProduct(int id, EditProductViewModel model)
         {
@@ -139,6 +226,54 @@ namespace AgriEnergyConnect.Controllers
             return RedirectToAction(nameof(ViewProducts)); // Redirect to the ViewProducts action
         }
 
+=======
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> EditProduct(int id, EditProductViewModel model)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (id != model.ProductID)
+                return NotFound();
+
+            var product = await _context.Products.FindAsync(id);
+            if (product == null || product.UserID != userId)
+                return NotFound();
+
+            if (!ModelState.IsValid)
+                return View(model);
+
+            string uniqueFileName = product.ImageFileName; // keep current image by default
+
+            if (model.ImageFile != null && model.ImageFile.Length > 0)
+            {
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+                Directory.CreateDirectory(uploadsFolder);
+
+                uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ImageFile.FileName);
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.ImageFile.CopyToAsync(fileStream);
+                }
+            }
+
+            // Update product fields
+            product.Name = model.Name;
+            product.Description = model.Description;
+            product.Price = model.Price;
+            product.ImageFileName = uniqueFileName;
+            product.Category = model.Category;
+            product.ProductionDate = model.ProductionDate;
+
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Product updated successfully.";
+            return RedirectToAction(nameof(ViewProducts));
+        }
+
+
+>>>>>>> agri-part3/main
         // GET: Farmer/DeleteProduct/5 - Display the confirmation for deleting a product
         public async Task<IActionResult> DeleteProduct(int id)
         {
@@ -151,6 +286,21 @@ namespace AgriEnergyConnect.Controllers
                 return NotFound();
             }
 
+<<<<<<< HEAD
+=======
+            if (!string.IsNullOrEmpty(product.ImageFileName))
+            {
+                var uploadsFolder = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads");
+                var imagePath = Path.Combine(uploadsFolder, product.ImageFileName);
+
+                if (System.IO.File.Exists(imagePath))
+                {
+                    System.IO.File.Delete(imagePath);
+                }
+            }
+
+
+>>>>>>> agri-part3/main
             _context.Products.Remove(product); // Remove the product from the database context
             await _context.SaveChangesAsync(); // Save changes to the database
 

@@ -2,9 +2,14 @@
 
 AgriEnergy Connect is a web-based prototype that connects farmers and energy employees. Farmers can register and list products. Employees can manage farmer profiles and see submitted data. This document explains how to set it up and use it.
 
+<<<<<<< HEAD
 [YouTube Video](https://youtu.be/WZOEWYorFOg)
 
 [GitHub Repository](https://github.com/VCSTDN2024/prog7311-part-2-Sandeep-Hari)
+=======
+[YouTube Video](https://youtu.be/H0o7uScgHO8)
+[GitHub Repository](https://github.com/VCSTDN2024/prog7311-part3-poe-Sandeep-Hari)
+>>>>>>> agri-part3/main
 
 ---
 
@@ -65,12 +70,23 @@ AgriEnergy Connect is a web-based prototype that connects farmers and energy emp
 - UI uses a farm-style theme with animations
 
 #### Login Test Data for Farmer
+<<<<<<< HEAD
 - **Username:** Jim.Davis@gmail.com
 - **Password:** Jim_Davis123
 
 ### Employee
 - Register or log in
 - View and update farmer profiles
+=======
+- **Username:** Farmer.John@gmail.com
+- **Password:** John_Farmer123_
+
+### Employee
+- Register or log in
+- Add new farmer profiles
+- Filter by Product Name, Price and etc
+- View and Activate Farmer Accounts created by logged in Employee
+>>>>>>> agri-part3/main
 - See all submitted products
 
 #### Login Test Data for Employee
@@ -107,4 +123,8 @@ AgriEnergy Connect is a web-based prototype that connects farmers and energy emp
 | View Submitted Products  | No     | Yes      |
 | Role-Based Redirection   | Yes    | Yes      |
 
+<<<<<<< HEAD
 ---
+=======
+---
+>>>>>>> agri-part3/main

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+<<<<<<< HEAD
 using System.Collections.Generic;
 
 namespace AgriEnergyConnect.Models
@@ -31,5 +32,38 @@ namespace AgriEnergyConnect.Models
         // For relationships with other entities (e.g., Farmer or GreenTechProvider)
         public int? FarmerId { get; set; }              // Reference to Farmer's entity (nullable)
         public int? GreenTechProviderId { get; set; }   // Reference to GreenTechProvider's entity (nullable)
+=======
+using System;
+
+namespace AgriEnergyConnect.Models
+{
+    public enum UserTypeEnum
+    {
+        Farmer,
+        Employee
+    }
+
+    public enum FarmerStatus
+    {
+        Pending,
+        Active
+    }
+
+    public class ApplicationUser : IdentityUser
+    {
+        public UserTypeEnum UserType { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public bool HasMarketplaceAccess { get; set; }
+        public bool HasForumAccess { get; set; }
+        public bool HasProductListingAccess { get; set; }
+        public bool HasAdminAccess { get; set; }
+        public int? FarmerId { get; set; }
+        public int? GreenTechProviderId { get; set; }
+        public string? RegisteredById { get; set; }
+        public ApplicationUser RegisteredBy { get; set; }
+        public FarmerStatus Status { get; set; } = FarmerStatus.Pending;
+        public DateTime RegistrationDate { get; set; } = DateTime.Now;
+>>>>>>> agri-part3/main
     }
 }

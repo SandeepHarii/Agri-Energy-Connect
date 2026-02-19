@@ -15,6 +15,10 @@
                     <table class="table table-bordered align-middle shadow-sm w-100" style="background-color: #FFFFFF;">
                         <thead style="background-color: #4682B4; color: white;">
                             <tr>
+<<<<<<< HEAD
+=======
+                                <th>Image</th>
+>>>>>>> agri-part3/main
                                 <th>Product</th>
                                 <th>Description</th>
                                 <th>Price</th>
@@ -25,6 +29,21 @@
                             @foreach (var (product, index) in Model.Select((value, i) => (value, i)))
                             {
                                 <tr class="@(index % 2 == 0 ? "table-light" : "table-custom")">
+<<<<<<< HEAD
+=======
+                                    <td>
+                                        @if (!string.IsNullOrEmpty(product.ImageFileName))
+                                        {
+                                            <a href="~/uploads/@product.ImageFileName" class="glightbox" data-glightbox="title:@product.Name">
+                                                <img src="~/uploads/@product.ImageFileName" alt="Product Image" style="height: 60px; cursor: pointer;" />
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <span>No Image</span>
+                                        }
+                                    </td>
+>>>>>>> agri-part3/main
                                     <td>@product.Name</td>
                                     <td>@product.Description</td>
                                     <td>@product.Price.ToString("C")</td>
@@ -38,6 +57,10 @@
                                     </td>
                                 </tr>
                             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> agri-part3/main
                         </tbody>
                     </table>
 

@@ -85,9 +85,24 @@ namespace AgriEnergyConnect.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("INTEGER");
 
+<<<<<<< HEAD
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("TEXT");
 
+=======
+                    b.Property<string>("RegisteredById")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("RegistrationDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("INTEGER");
+
+>>>>>>> agri-part3/main
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("INTEGER");
 
@@ -107,6 +122,11 @@ namespace AgriEnergyConnect.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
 
+<<<<<<< HEAD
+=======
+                    b.HasIndex("RegisteredById");
+
+>>>>>>> agri-part3/main
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
@@ -120,6 +140,12 @@ namespace AgriEnergyConnect.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+<<<<<<< HEAD
+=======
+                    b.Property<DateTime>("DateRegistered")
+                        .HasColumnType("TEXT");
+
+>>>>>>> agri-part3/main
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -128,6 +154,12 @@ namespace AgriEnergyConnect.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+<<<<<<< HEAD
+=======
+                    b.Property<int>("Status")
+                        .HasColumnType("INTEGER");
+
+>>>>>>> agri-part3/main
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -284,7 +316,11 @@ namespace AgriEnergyConnect.Migrations
                     b.Property<int?>("FarmerID")
                         .HasColumnType("INTEGER");
 
+<<<<<<< HEAD
                     b.Property<string>("ImageUrl")
+=======
+                    b.Property<string>("ImageFileName")
+>>>>>>> agri-part3/main
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -311,6 +347,18 @@ namespace AgriEnergyConnect.Migrations
                     b.ToTable("Products");
                 });
 
+<<<<<<< HEAD
+=======
+            modelBuilder.Entity("AgriEnergyConnect.Models.ApplicationUser", b =>
+                {
+                    b.HasOne("AgriEnergyConnect.Models.ApplicationUser", "RegisteredBy")
+                        .WithMany()
+                        .HasForeignKey("RegisteredById");
+
+                    b.Navigation("RegisteredBy");
+                });
+
+>>>>>>> agri-part3/main
             modelBuilder.Entity("Farmer", b =>
                 {
                     b.HasOne("AgriEnergyConnect.Models.ApplicationUser", "User")

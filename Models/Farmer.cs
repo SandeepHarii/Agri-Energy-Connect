@@ -33,4 +33,13 @@ public class Farmer
     // Navigation property for the related Product entities
     // This property represents a list of products the farmer has listed on the platform
     public List<Product> Products { get; set; }
+<<<<<<< HEAD
+=======
+
+    // New: Status of the farmer account, default is Pending
+    public FarmerStatus Status { get; set; } = FarmerStatus.Pending;
+
+    // New: Date the farmer was registered (optional but useful)
+    public DateTime DateRegistered { get; set; } = DateTime.Now;
+>>>>>>> agri-part3/main
 }

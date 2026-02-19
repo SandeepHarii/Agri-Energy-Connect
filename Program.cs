@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+<<<<<<< HEAD
 // Configure database context
 // The application uses SQLite as the database. The connection string "DefaultConnection" 
 // is read from the app's configuration (e.g., appsettings.json).
@@ -37,11 +38,40 @@ builder.Services.AddAuthorization(options =>
     // Policy for Farmer role
     options.AddPolicy("Farmer", policy => policy.RequireRole("Farmer"));
     // Policy for Employee role
+=======
+// 1. DB Context (SQLite)
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// 2. Identity with custom user
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+
+// 3. Email sender config
+var emailConfig = builder.Configuration.GetSection("EmailSettings").Get<EmailSettings>();
+builder.Services.AddSingleton<IEmailSender>(new SmtpEmailSender(
+    emailConfig.SmtpServer,
+    emailConfig.Port,
+    emailConfig.FromEmail,
+    emailConfig.Password
+));
+
+// 4. MVC + Razor
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
+
+// 5. Role-based policies
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Farmer", policy => policy.RequireRole("Farmer"));
+>>>>>>> agri-part3/main
     options.AddPolicy("Employee", policy => policy.RequireRole("Employee"));
 });
 
 var app = builder.Build();
 
+<<<<<<< HEAD
 // Seed roles and users
 // This section initializes the database with roles (Farmer and Employee) and users (a farmer and an employee).
 using (var scope = app.Services.CreateScope())
@@ -129,11 +159,91 @@ if (app.Environment.IsDevelopment()) // If the environment is development, show 
     app.UseDeveloperExceptionPage();
 }
 else // In production, use exception handling and HTTP Strict Transport Security (HSTS)
+=======
+// 6. Seed roles and default users
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+    var dbContext = services.GetRequiredService<ApplicationDbContext>();
+
+    string[] roles = { "Farmer", "Employee" };
+
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+            await roleManager.CreateAsync(new IdentityRole(role));
+    }
+
+    // Farmer
+    var farmerEmail = "farmer@test.com";
+    var farmerUser = await userManager.FindByEmailAsync(farmerEmail);
+    if (farmerUser == null)
+    {
+        farmerUser = new ApplicationUser
+        {
+            UserName = farmerEmail,
+            Email = farmerEmail,
+            EmailConfirmed = true,
+            FirstName = "John",
+            LastName = "Doe",
+            PhoneNumber = "1234567890",
+            UserType = UserTypeEnum.Farmer
+        };
+
+        var result = await userManager.CreateAsync(farmerUser, "Farmer1!");
+        if (result.Succeeded)
+        {
+            await userManager.AddToRoleAsync(farmerUser, "Farmer");
+
+            dbContext.Farmers.Add(new Farmer
+            {
+                Name = "John Doe",
+                Contact = "1234567890",
+                Location = "Eastern Cape",
+                UserId = farmerUser.Id
+            });
+
+            await dbContext.SaveChangesAsync();
+        }
+    }
+
+    // Employee
+    var employeeEmail = "employee@test.com";
+    var employeeUser = await userManager.FindByEmailAsync(employeeEmail);
+    if (employeeUser == null)
+    {
+        employeeUser = new ApplicationUser
+        {
+            UserName = employeeEmail,
+            Email = employeeEmail,
+            EmailConfirmed = true,
+            FirstName = "Emily",
+            LastName = "Smith",
+            PhoneNumber = "0987654321",
+            UserType = UserTypeEnum.Employee
+        };
+
+        var result = await userManager.CreateAsync(employeeUser, "Employee123!");
+        if (result.Succeeded)
+            await userManager.AddToRoleAsync(employeeUser, "Employee");
+    }
+}
+
+// 7. Middleware
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
+>>>>>>> agri-part3/main
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
 
+<<<<<<< HEAD
 app.UseHttpsRedirection(); // Redirect HTTP requests to HTTPS
 app.UseStaticFiles(); // Serve static files (CSS, JS, images, etc.)
 
@@ -150,3 +260,17 @@ app.MapControllerRoute(
 app.MapRazorPages(); // Map Razor Pages
 
 app.Run(); // Run the application
+=======
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapRazorPages();
+
+app.Run();
+>>>>>>> agri-part3/main

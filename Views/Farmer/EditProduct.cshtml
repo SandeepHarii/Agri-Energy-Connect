@@ -12,7 +12,11 @@
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
 
             <div class="Wrapper">
+<<<<<<< HEAD
                 <form asp-action="EditProduct" method="post">
+=======
+                <form asp-action="EditProduct" enctype="multipart/form-data" method="post">
+>>>>>>> agri-part3/main
                     <input type="hidden" asp-for="ProductID" />
 
                     <!-- Product Name -->
@@ -36,11 +40,19 @@
                         <span asp-validation-for="Price" class="text-danger"></span>
                     </div>
 
+<<<<<<< HEAD
                     <!-- Image URL -->
                     <div class="mb-3 input-with-icon">
                         <input asp-for="ImageUrl" class="form-control" type="text" placeholder="Image URL" />
                         <i class='bx bx-image'></i>
                         <span asp-validation-for="ImageUrl" class="text-danger"></span>
+=======
+                    <!-- Image -->
+                    <div class="mb-3 input-with-icon">
+                        <input asp-for="ImageFile" type="file" class="form-control" />
+                        <i class='bx bx-upload'></i>
+                        <span asp-validation-for="ImageFile" class="text-danger"></span>
+>>>>>>> agri-part3/main
                     </div>
 
                     <!-- Category -->

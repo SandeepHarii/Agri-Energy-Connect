@@ -19,8 +19,14 @@ namespace AgriEnergyConnect.ViewModels
         [Range(0, double.MaxValue)] // Ensures price can't be negative
         public decimal Price { get; set; }
 
+<<<<<<< HEAD
         // Product Image URL: Optional field for a link to an image of the product
         public string ImageUrl { get; set; }
+=======
+        public IFormFile? ImageFile { get; set; } // for image uploads
+        // Product Image URL: Optional field for a link to an image of the product
+        public string? ImageFileName { get; set; }
+>>>>>>> agri-part3/main
 
         // Product Category: Optional field to specify the category of the product
         public string Category { get; set; }
